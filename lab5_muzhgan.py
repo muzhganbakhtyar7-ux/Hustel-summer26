@@ -1,22 +1,64 @@
-# Muzhgan Bakhtyar | Lab 5 | Intro to Python
-# Ticket 1
-# PREDICT: Ages 17, 25, and 13 will get "Access granted" and Ages 11 and 9 will get "Too young"
 
-ages = [17, 11, 25, 9, 13]
-for age in ages:
-    if age >=13:
-        print(f"{age} - Access granted")
-    else:
-        print(f"{age} - Too young")
-#EXPLAIN: The codes show which age is too young and which is old enough to get access.
+# LAB 5 - WEEK 5 : The VibeCheck Bug Hunt
 
-# Ticket 2
-# PREDICT: Maybe if I type "no" after the first check, the loop will stop.
-keep_checking = "yes"
-while keep_checking == "yes":
-    age = int(input("Enter your age: "))
-    if age >= 13:
-        print("Access granted")
-    else:
-        print("Too young")
-    keep_checking = input("check another age? (yes/no): ")
+# Name: ___Muzhgan Bakhtyar___
+
+
+# PART 1 - A function that greets a user
+
+
+# BUG 1: Added a colon
+def send_vibe():
+    print("VibeCheck says: good energy only")
+
+
+# BUG 2: Indented the print statement
+def welcome_user():
+    print("Welcome to VibeCheck!")
+
+
+# PART 2 - A function that uses a variable
+
+
+def show_mood():
+    mood = "hyped"
+    # BUG 3: Fixed variable name
+    print(f"Today's mood is {mood}")
+
+
+# PART 3 - A function with parameters
+
+def make_shoutout(name, mood):
+    return f"{name} is feeling {mood} today!"
+
+
+# PART 4 - A function that counts hype points
+
+
+def count_hype(likes, shares):
+    # BUG 4: Add instead of subtract
+    total = likes + shares
+    return total
+
+
+def final_message():
+    print("Thanks for using VibeCheck!")
+
+
+# RUNNING THE CODE
+
+send_vibe()
+welcome_user()
+show_mood()
+
+# BUG 6: Wrapped in print()
+print(make_shoutout("Jordan", "creative"))
+
+# BUG 7: Added the missing mood argument
+print(make_shoutout("Alex", "chill"))
+
+# BUG 8: Changed "ten" to the number 10
+print(count_hype(10, 5))
+
+# BUG 5: Moved the function call after the function definition
+final_message()
